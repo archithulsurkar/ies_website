@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Arduino</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav>
+        <img src="Images/eLearning_logo.png" alt="Website logo" />
+        <div class="navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Arduino</a></li>
+                <li><a href="topics.html">Topics</a></li>
+                <li><a href="samples.html">Sample Programs</a></li>
+                <li><a href="flashcards.html">Flashcards</a></li>
+                <li><a href="mcqs.html">MCQs</a></li>
+                <li><a href="fun-facts.html">Fun Facts</a></li>
+                <li><a href="quizzes.html">Quizzes</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Arduino -->
+    <section id="about">
+        <h1>About Arduino</h1>
+        <p class="intro-text">
+            Arduino is an open-source electronics platform based on easy-to-use hardware and software. It's designed for anyone interested in creating interactive projects, from beginners to advanced users.
+        </p>
+
+        <!-- Navigation Buttons -->
+        <div class="section-nav">
+            <button onclick="scrollToSection('history')">History</button>
+            <button onclick="scrollToSection('components')">Components</button>
+            <button onclick="scrollToSection('advantages')">Advantages</button>
+            <button onclick="scrollToSection('applications')">Applications</button>
+        </div>
+
+        <!-- Key Features -->
+        <div class="about-base">
+            <div class="about-box">
+                <i class="fa-solid fa-microchip"></i>
+                <h3>What is Arduino?</h3>
+                <p>
+                    Arduino is a microcontroller platform that simplifies electronics and programming. It consists of a programmable circuit board and a software IDE for writing and uploading code.
+                </p>
+            </div>
+            <div class="about-box">
+                <i class="fa-solid fa-desktop"></i>
+                <h3>Arduino IDE</h3>
+                <p>
+                    The Arduino IDE is a user-friendly software tool for writing, compiling, and uploading code to Arduino boards. It supports C and C++ programming languages.
+                </p>
+            </div>
+            <div class="about-box">
+                <i class="fa-solid fa-cubes"></i>
+                <h3>Arduino Variants</h3>
+                <p>
+                    Arduino comes in various forms, such as the UNO, Nano, Mega, and Leonardo. Each variant is tailored for specific applications, offering different features and capabilities.
+                </p>
+            </div>
+        </div>
+
+        <!-- Expanded Information -->
+        <div class="additional-info">
+            <!-- History Section -->
+            <div id="history">
+                <h2>History of Arduino</h2>
+                <p>
+                    Arduino was developed in 2005 by Massimo Banzi, David Cuartielles, Tom Igoe, Gianluca Martino, and David Mellis at the Interaction Design Institute Ivrea in Italy. The goal was to create an easy-to-use tool for students and hobbyists to build interactive
+                    projects without extensive knowledge of electronics or programming.
+                </p>
+            </div>
+
+            <!-- Components Section -->
+            <div id="components">
+                <h2>Key Components of Arduino</h2>
+                <div class="components-grid">
+                    <div class="component">
+                        <i class="fa-solid fa-microchip"></i>
+                        <h4>Microcontroller</h4>
+                        <p>The brain of the Arduino board, responsible for executing programs.</p>
+                    </div>
+                    <div class="component">
+                        <i class="fa-solid fa-plug"></i>
+                        <h4>Digital I/O Pins</h4>
+                        <p>Used to read or write digital signals (HIGH or LOW).</p>
+                    </div>
+                    <div class="component">
+                        <i class="fa-solid fa-wave-square"></i>
+                        <h4>Analog Input Pins</h4>
+                        <p>Used to read analog signals (e.g., from sensors).</p>
+                    </div>
+                    <div class="component">
+                        <i class="fa-solid fa-battery-full"></i>
+                        <h4>Power Supply</h4>
+                        <p>Provides power to the board and connected components.</p>
+                    </div>
+                    <div class="component">
+                        <i class="fa-solid fa-usb"></i>
+                        <h4>USB Connection</h4>
+                        <p>Used for programming and communication with a computer.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Advantages Section -->
+            <div id="advantages">
+                <h2>Advantages of Arduino</h2>
+                <div class="advantages-grid">
+                    <div class="advantage">
+                        <i class="fa-solid fa-code"></i>
+                        <h4>Open-Source</h4>
+                        <p>Both the hardware and software are open-source, making it accessible to everyone.</p>
+                    </div>
+                    <div class="advantage">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        <h4>Easy to Learn</h4>
+                        <p>The Arduino IDE and community make it beginner-friendly.</p>
+                    </div>
+                    <div class="advantage">
+                        <i class="fa-solid fa-cogs"></i>
+                        <h4>Versatile</h4>
+                        <p>Can be used for a wide range of projects, from simple LED blinking to complex robotics.</p>
+                    </div>
+                    <div class="advantage">
+                        <i class="fa-solid fa-wallet"></i>
+                        <h4>Affordable</h4>
+                        <p>Arduino boards are relatively inexpensive, making them accessible to students and hobbyists.</p>
+                    </div>
+                    <div class="advantage">
+                        <i class="fa-solid fa-users"></i>
+                        <h4>Large Community</h4>
+                        <p>A vast community of users and developers provides support, tutorials, and project ideas.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Applications Section -->
+            <div id="applications">
+                <h2>Applications of Arduino</h2>
+                <div class="applications-grid">
+                    <div class="application">
+                        <i class="fa-solid fa-home"></i>
+                        <h4>Home Automation</h4>
+                        <p>Controlling lights, appliances, and security systems.</p>
+                    </div>
+                    <div class="application">
+                        <i class="fa-solid fa-robot"></i>
+                        <h4>Robotics</h4>
+                        <p>Building robots for education, research, and entertainment.</p>
+                    </div>
+                    <div class="application">
+                        <i class="fa-solid fa-network-wired"></i>
+                        <h4>IoT (Internet of Things)</h4>
+                        <p>Connecting devices to the internet for data collection and control.</p>
+                    </div>
+                    <div class="application">
+                        <i class="fa-solid fa-tshirt"></i>
+                        <h4>Wearable Technology</h4>
+                        <p>Creating smart clothing and accessories.</p>
+                    </div>
+                    <div class="application">
+                        <i class="fa-solid fa-palette"></i>
+                        <h4>Art Installations</h4>
+                        <p>Interactive art projects that respond to user input or environmental changes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Copyright ©2023 All rights reserved | Made by Harshal Margaj</p>
+    </footer>
+
+    <!-- Smooth Scroll Script -->
+    <script>
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
