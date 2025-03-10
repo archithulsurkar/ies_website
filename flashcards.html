@@ -6,8 +6,96 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flashcards</title>
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
+        nav img {
+            height: 40px;
+            vertical-align: middle;
+        }
+        .navigation ul {
+            list-style: none;
+            padding: 0;
+            display: inline-block;
+        }
+        .navigation ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        .navigation ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        h1 {
+            margin-top: 20px;
+        }
+
+        /* Flashcard container */
+        .flashcards-base {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        /* Flashcard Style */
+        .flashcard {
+            width: 250px;
+            height: 150px;
+            perspective: 1000px;
+            cursor: pointer;
+        }
+        .flashcard-inner {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+            position: relative;
+        }
+        .flashcard:hover .flashcard-inner {
+            transform: rotateY(180deg);
+        }
+
+        /* Front and Back of Flashcard */
+        .flashcard-front,
+        .flashcard-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .flashcard-front {
+            background-color: #000000;
+            color: white;
+        }
+        .flashcard-back {
+            background-color: #28a745;
+            color: white;
+            transform: rotateY(180deg);
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +105,7 @@
         <div class="navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Arduino</a></li>
+                <li><a href="about.html">Content</a></li>
                 <li><a href="topics.html">Topics</a></li>
                 <li><a href="samples.html">Sample Programs</a></li>
                 <li><a href="flashcards.html">Flashcards</a></li>
@@ -35,21 +123,133 @@
         <h1>Flashcards</h1>
         <p>Test your knowledge with these interactive flashcards.</p>
         <div class="flashcards-base">
+            
+            <!-- Flashcard 1 -->
             <div class="flashcard">
-                <div class="flashcard-front">
-                    <h3>What is the Arduino UNO?</h3>
-                </div>
-                <div class="flashcard-back">
-                    <p>The Arduino UNO is a microcontroller board based on the ATmega328P. It has 14 digital I/O pins, 6 analog inputs, and a USB connection for programming.</p>
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>What is Arduino UNO?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Microcontroller board based on ATmega328P.</p>
+                    </div>
                 </div>
             </div>
-            <!-- Add more flashcards here -->
+
+            <!-- Flashcard 2 -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>What is a microcontroller?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>A small computer on a single chip.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard 3 -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>What is Arduino IDE?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Software to write and upload Arduino code.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard 4 -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>Purpose of `pinMode()`?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Configures pin as INPUT or OUTPUT.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard 5 -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>How to generate a tone?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Use `tone(pin, frequency);`</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard 6 -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>Use of `analogWrite()`?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Generates PWM signals.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard 7 -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>Use of `Serial.begin()`?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Starts serial communication.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard 8 -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>What is an interrupt?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Pauses code to handle an event.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard 9 -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>Use of `map()` function?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Scales a value to another range.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flashcard 10 -->
+            <div class="flashcard">
+                <div class="flashcard-inner">
+                    <div class="flashcard-front">
+                        <p>What does `millis()` do?</p>
+                    </div>
+                    <div class="flashcard-back">
+                        <p>Returns program uptime in ms.</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Copyright ©2023 All rights reserved | Made by Harshal Margaj</p>
+        <p>Copyright ©2023 All rights reserved</p>
     </footer>
 </body>
 

@@ -8,6 +8,13 @@
     <title>MCQs</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <style>
+        .mcq-correct-answer {
+            display: none;
+            color: green;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +24,7 @@
         <div class="navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Arduino</a></li>
+                <li><a href="about.html">content</a></li>
                 <li><a href="topics.html">Topics</a></li>
                 <li><a href="samples.html">Sample Programs</a></li>
                 <li><a href="flashcards.html">Flashcards</a></li>
@@ -45,14 +52,88 @@
                 <button class="mcq-answer">Show Answer</button>
                 <p class="mcq-correct-answer">Correct Answer: 5V</p>
             </div>
-            <!-- Add more MCQs here -->
+
+            <div class="mcq">
+                <h3>Which microcontroller is used in Arduino UNO?</h3>
+                <ul>
+                    <li><input type="radio" name="mcq2" /> ATmega16</li>
+                    <li><input type="radio" name="mcq2" /> ATmega328P</li>
+                    <li><input type="radio" name="mcq2" /> ATmega2560</li>
+                </ul>
+                <button class="mcq-answer">Show Answer</button>
+                <p class="mcq-correct-answer">Correct Answer: ATmega328P</p>
+            </div>
+
+            <div class="mcq">
+                <h3>Which function is used to read an analog signal in Arduino?</h3>
+                <ul>
+                    <li><input type="radio" name="mcq3" /> digitalRead()</li>
+                    <li><input type="radio" name="mcq3" /> analogWrite()</li>
+                    <li><input type="radio" name="mcq3" /> analogRead()</li>
+                </ul>
+                <button class="mcq-answer">Show Answer</button>
+                <p class="mcq-correct-answer">Correct Answer: analogRead()</p>
+            </div>
+
+            <div class="mcq">
+                <h3>Which function is used to generate a tone in Arduino?</h3>
+                <ul>
+                    <li><input type="radio" name="mcq4" /> tone()</li>
+                    <li><input type="radio" name="mcq4" /> noTone()</li>
+                    <li><input type="radio" name="mcq4" /> playTone()</li>
+                </ul>
+                <button class="mcq-answer">Show Answer</button>
+                <p class="mcq-correct-answer">Correct Answer: tone()</p>
+            </div>
+
+            <div class="mcq">
+                <h3>Which function is used to attach an external interrupt?</h3>
+                <ul>
+                    <li><input type="radio" name="mcq5" /> attachInterrupt()</li>
+                    <li><input type="radio" name="mcq5" /> detachInterrupt()</li>
+                    <li><input type="radio" name="mcq5" /> enableInterrupt()</li>
+                </ul>
+                <button class="mcq-answer">Show Answer</button>
+                <p class="mcq-correct-answer">Correct Answer: attachInterrupt()</p>
+            </div>
+
+            <div class="mcq">
+                <h3>What does the `map()` function do in Arduino?</h3>
+                <ul>
+                    <li><input type="radio" name="mcq6" /> Converts analog input to digital</li>
+                    <li><input type="radio" name="mcq6" /> Maps a range of values to another range</li>
+                    <li><input type="radio" name="mcq6" /> Generates a sine wave</li>
+                </ul>
+                <button class="mcq-answer">Show Answer</button>
+                <p class="mcq-correct-answer">Correct Answer: Maps a range of values to another range</p>
+            </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Copyright ©2023 All rights reserved | Made by Harshal Margaj</p>
+        <p></p>
     </footer>
+
+    <!-- JavaScript to Toggle Answers -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let buttons = document.querySelectorAll(".mcq-answer");
+
+            buttons.forEach(button => {
+                button.addEventListener("click", function() {
+                    let answer = this.nextElementSibling;
+                    if (answer.style.display === "none" || answer.style.display === "") {
+                        answer.style.display = "block";
+                        this.textContent = "Hide Answer";
+                    } else {
+                        answer.style.display = "none";
+                        this.textContent = "Show Answer";
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -8,6 +8,62 @@
     <title>Quizzes</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .options label {
+            display: block;
+            padding: 8px;
+            background: #fff;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .options label:hover {
+            background: #dbeafe;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
 </head>
 
 <body>
@@ -17,7 +73,7 @@
         <div class="navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Arduino</a></li>
+                <li><a href="about.html">content</a></li>
                 <li><a href="topics.html">Topics</a></li>
                 <li><a href="samples.html">Sample Programs</a></li>
                 <li><a href="flashcards.html">Flashcards</a></li>
@@ -32,21 +88,112 @@
 
     <!-- Quizzes -->
     <section id="quizzes">
-        <h1>Quizzes</h1>
-        <p>Test your knowledge with these interactive quizzes.</p>
-        <div class="quizzes-base">
-            <div class="quiz">
-                <h3>Quiz 1: Arduino Basics</h3>
-                <p>Answer 5 questions to test your understanding of Arduino basics.</p>
-                <a href="#" class="btn-one">Start Quiz</a>
-            </div>
-            <!-- Add more quizzes here -->
+        <h1>Microcontroller & Arduino Quiz</h1>
+        <p>Test your knowledge with this interactive quiz.</p>
+
+        <div class="quiz-container">
+            <div id="quiz"></div>
+            <button class="btn" onclick="submitQuiz()">Submit Quiz</button>
+            <p class="result" id="result"></p>
         </div>
     </section>
 
+    <!-- JavaScript for Quiz Logic -->
+    <script>
+        const quizData = [
+            {
+                question: "1. What is a microcontroller?",
+                options: [
+                    "A small computer on a single chip",
+                    "A type of sensor",
+                    "A high-power processor",
+                    "A storage device"
+                ],
+                correct: 0
+            },
+            {
+                question: "2. Which microcontroller is used in Arduino Uno?",
+                options: [
+                    "ATmega328P",
+                    "ESP8266",
+                    "ATtiny85",
+                    "ARM Cortex-M4"
+                ],
+                correct: 0
+            },
+            {
+                question: "3. What is the purpose of the Arduino IDE?",
+                options: [
+                    "To design circuits",
+                    "To program Arduino boards",
+                    "To create 3D models",
+                    "To store files"
+                ],
+                correct: 1
+            },
+            {
+                question: "4. Which communication protocol is NOT supported by Arduino Uno?",
+                options: [
+                    "I2C",
+                    "SPI",
+                    "Wi-Fi",
+                    "UART"
+                ],
+                correct: 2
+            },
+            {
+                question: "5. What does the 'void setup()' function do in an Arduino sketch?",
+                options: [
+                    "Runs repeatedly in a loop",
+                    "Executes once at the start",
+                    "Stops the program",
+                    "Sends data to a server"
+                ],
+                correct: 1
+            }
+        ];
+
+        function loadQuiz() {
+            const quizDiv = document.getElementById("quiz");
+            quizData.forEach((q, index) => {
+                const questionDiv = document.createElement("div");
+                questionDiv.classList.add("question");
+                questionDiv.innerHTML = `<p>${q.question}</p>`;
+
+                const optionsDiv = document.createElement("div");
+                optionsDiv.classList.add("options");
+
+                q.options.forEach((option, optIndex) => {
+                    const optionLabel = document.createElement("label");
+                    optionLabel.innerHTML = `
+                        <input type="radio" name="q${index}" value="${optIndex}"> ${option}
+                    `;
+                    optionsDiv.appendChild(optionLabel);
+                });
+
+                questionDiv.appendChild(optionsDiv);
+                quizDiv.appendChild(questionDiv);
+            });
+        }
+
+        function submitQuiz() {
+            let score = 0;
+            quizData.forEach((q, index) => {
+                const selectedOption = document.querySelector(`input[name="q${index}"]:checked`);
+                if (selectedOption && parseInt(selectedOption.value) === q.correct) {
+                    score++;
+                }
+            });
+
+            document.getElementById("result").innerText = `You scored ${score} out of ${quizData.length}!`;
+        }
+
+        loadQuiz();
+    </script>
+
     <!-- Footer -->
     <footer>
-        <p>Copyright ©2023 All rights reserved | Made by Harshal Margaj</p>
+        <p></p>
     </footer>
 </body>
 

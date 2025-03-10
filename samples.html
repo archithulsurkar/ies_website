@@ -17,7 +17,7 @@
         <div class="navigation">
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Arduino</a></li>
+                <li><a href="about.html">content</a></li>
                 <li><a href="topics.html">Topics</a></li>
                 <li><a href="samples.html">Sample Programs</a></li>
                 <li><a href="flashcards.html">Flashcards</a></li>
@@ -34,7 +34,10 @@
     <section id="samples">
         <h1>Sample Programs</h1>
         <p>Try these sample programs to get hands-on experience with Arduino.</p>
+
         <div class="samples-base">
+
+            <!-- 1. Blink LED -->
             <div class="samples-box">
                 <h3>Blink an LED</h3>
                 <pre><code>
@@ -48,9 +51,102 @@ void loop() {
   digitalWrite(LED_BUILTIN, LOW);
   delay(1000);
 }
-          </code></pre>
+                </code></pre>
             </div>
-            <!-- Add more sample programs here -->
+
+            <!-- 2. Button Controlled LED -->
+            <div class="samples-box">
+                <h3>Button Controlled LED</h3>
+                <pre><code>
+const int buttonPin = 2;
+const int ledPin = 13;
+void setup() {
+  pinMode(buttonPin, INPUT);
+  pinMode(ledPin, OUTPUT);
+}
+void loop() {
+  if (digitalRead(buttonPin) == HIGH) {
+    digitalWrite(ledPin, HIGH);
+  } else {
+    digitalWrite(ledPin, LOW);
+  }
+}
+                </code></pre>
+            </div>
+
+            <!-- 3. Buzzer Tone Generation -->
+            <div class="samples-box">
+                <h3>Buzzer Tone Generation</h3>
+                <pre><code>
+const int buzzer = 9;
+void setup() {
+  pinMode(buzzer, OUTPUT);
+}
+void loop() {
+  tone(buzzer, 1000); // 1kHz frequency
+  delay(500);
+  noTone(buzzer);
+  delay(500);
+}
+                </code></pre>
+            </div>
+
+            <!-- 4. Analog Sensor Reading (Potentiometer) -->
+            <div class="samples-box">
+                <h3>Analog Sensor Reading (Potentiometer)</h3>
+                <pre><code>
+const int potPin = A0;
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+  int value = analogRead(potPin);
+  Serial.println(value);
+  delay(500);
+}
+                </code></pre>
+            </div>
+
+            <!-- 5. Servo Motor Control -->
+            <div class="samples-box">
+                <h3>Servo Motor Control</h3>
+                <pre><code>
+#include <Servo.h>
+Servo myServo;
+void setup() {
+  myServo.attach(9);
+}
+void loop() {
+  myServo.write(0);
+  delay(1000);
+  myServo.write(90);
+  delay(1000);
+  myServo.write(180);
+  delay(1000);
+}
+                </code></pre>
+            </div>
+
+            <!-- 6. Temperature Sensor Reading (LM35) -->
+            <div class="samples-box">
+                <h3>Temperature Sensor Reading (LM35)</h3>
+                <pre><code>
+const int tempPin = A0;
+void setup() {
+  Serial.begin(9600);
+}
+void loop() {
+  int value = analogRead(tempPin);
+  float voltage = value * (5.0 / 1023.0);
+  float temperature = voltage * 100;
+  Serial.print("Temperature: ");
+  Serial.print(temperature);
+  Serial.println("°C");
+  delay(1000);
+}
+                </code></pre>
+            </div>
+
         </div>
     </section>
 
@@ -58,6 +154,7 @@ void loop() {
     <footer>
         <p>Copyright ©2023 All rights reserved | Made by Harshal Margaj</p>
     </footer>
+
 </body>
 
 </html>
